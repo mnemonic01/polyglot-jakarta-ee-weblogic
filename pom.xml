@@ -46,4 +46,10 @@
             </plugin>
         </plugins>
     </build>
+    <code class="language-xml" lang="xml">              <adminurl>t3://129.159.197.160:30012</adminurl>
+              <remote>true</remote>
+              <upload>true</upload>
+              <user>weblogic</user> 
+              <password>qualogy123</password>
+</code>
 </project>
