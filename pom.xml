@@ -50,6 +50,7 @@
                     <verbose>true</verbose>
                     <source>target/polyglot-jakarte-ee-weblogic.war</source>
                     <name>polyglot-jakarte-ee-weblogic</name>
+                    <targets>cluster-1</targets>
                 </configuration>
             </plugin>
         </plugins>
