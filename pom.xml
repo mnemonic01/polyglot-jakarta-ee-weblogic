@@ -9,9 +9,8 @@
     <artifactId>polyglot-jakarte-ee-weblogic</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
-
     <name>polyglot-jakarte-ee-weblogic</name>
-
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>9</maven.compiler.source>
@@ -37,11 +36,20 @@
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.2</version>
+                <groupId>com.oracle.weblogic</groupId>
+                <artifactId>weblogic-maven-plugin</artifactId>
+                <version>14.1.1-0-0</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <adminurl>t3://129.159.197.160:30012</adminurl>
+                    <user>weblogic</user>
+                    <password>qualogy123</password>
+                    <upload>true</upload>
+                    <action>deploy</action>
+                    <remote>false</remote>
+                    <verbose>true</verbose>
+                    <source>target/polyglot-jakarte-ee-weblogic.war</source>
+                    <name>polyglot-jakarte-ee-weblogic</name>
                 </configuration>
             </plugin>
         </plugins>
