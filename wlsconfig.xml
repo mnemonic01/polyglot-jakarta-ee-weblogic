@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://org.jenkinsci.plugins/WeblogicDeploymentPlugin"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://org.jenkinsci.plugins/WeblogicDeploymentPlugin plugin-configuration.xsd"> 
+<weblogic-targets>
+	<weblogic-target>
+		<name>cluster_1</name>
+		<host>129.159.197.160</host>
+		<port>80</port>
+		<login>weblogic</login>
+		<password>qualogy123</password>
+		<authMode>BY_LOGIN</authMode>
+	</weblogic-target>
+</weblogic-targets>
+</config>
