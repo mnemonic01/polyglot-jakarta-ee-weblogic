@@ -37,9 +37,9 @@ public class PolyglotJavascriptRestController {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String helloWorld(@DefaultValue("Dear Conference Attendees") @QueryParam("name") String name) {
+    public String helloWorld(@DefaultValue("Attendees") @QueryParam("name") String name) {
         try (Context ctx = Context.create()) {
-            Value function = ctx.eval("js", "name => `Hello ${name}, this is a polyglot Jakarte EE app running on WebLogic 14c and using Javascript`");
+            Value function = ctx.eval("js", "name => `Hello ${name}, this is some polyglot Jakarte EE app running on WebLogic 14 and using Javascript`");
             return function.execute(name).asString();
         }
     }
