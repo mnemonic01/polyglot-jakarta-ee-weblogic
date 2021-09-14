@@ -26,6 +26,7 @@
 
 package ninckblokje.graalvm.pjew.controller;
 
+import org.graalvm.polyglot.*;
 import org.graalvm.polyglot.Context;
 import org.graalvm.polyglot.Value;
 
@@ -34,19 +35,13 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/ruby")
 public class PolyglotRubyRestController {
-    require 'json'
-    obj = {
-      time: Time.now,
-      msg: 'Hello World',
-      payload: (1..10).to_a
+  class Embedding {
+    public static void main(String[] args) {
+        Context polyglot = Context.newBuilder().allowAllAccess(true).build();
+        Value array = polyglot.eval("ruby", "[1,2,42,4]");
+        int result = array.getArrayElement(2).asInt();
+        System.out.println(result);
     }
-    encoded = JSON.dump(obj)
-    js_obj = Polyglot.eval('js', 'JSON.parse').call(encoded)
-    puts js_obj[:time]
-    puts js_obj[:msg]
-    puts js_obj[:payload].join(' ')
-
-        }
-    }
+}
 }
 
