@@ -35,12 +35,10 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/ruby")
 public class PolyglotRubyRestController {
-  class Embedding {
-    public static void main(String[] args) {
-        Context polyglot = Context.newBuilder().allowAllAccess(true).build();
-        Value array = polyglot.eval("ruby", "[1,2,42,4]");
-        int result = array.getArrayElement(2).asInt();
-        System.out.println(result);
+  public static void main(String[] args) {
+    System.out.println("Hello Java!");
+    try (Context context = Context.create()) {
+        context.eval("ruby", "puts 'Hello Ruby!'");
     }
 }
 }
